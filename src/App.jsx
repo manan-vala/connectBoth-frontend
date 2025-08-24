@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`${API_BASE}/jokes`)
+      .get(`${API_BASE}/api/jokes`)
       .then((response) => {
         setJokes(response.data);
       })
