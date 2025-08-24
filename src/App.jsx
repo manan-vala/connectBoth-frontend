@@ -7,16 +7,18 @@ import axios from "axios";
 function App() {
   const [jokes, setJokes] = useState([]);
 
+  const API_BASE = import.meta.env.VITE_API_URL || "/api";
+
   useEffect(() => {
     axios
-      .get("/api/jokes")
+      .get(`${API_BASE}/jokes`)
       .then((response) => {
         setJokes(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   return (
     <>
